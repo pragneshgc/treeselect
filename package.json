@@ -2,10 +2,6 @@
   "name": "@pragnesh/vue-treeselect",
   "version": "1.0.0",
   "description": "Vue 3 treeselect",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pragneshgc/treeselect.git"
@@ -18,5 +14,43 @@
   "bugs": {
     "url": "https://github.com/pragneshgc/treeselect/issues"
   },
-  "homepage": "https://github.com/pragneshgc/treeselect#readme"
+  "homepage": "https://github.com/pragneshgc/treeselect#readme",
+  "type": "module",
+  "files": [
+    "dist/*.js",
+    "dist/*.css",
+    "styles"
+  ],
+  "style": "dist/vue3-treeselect.css",
+  "main": "./dist/vue3-treeselect.umd.cjs",
+  "module": "./dist/vue3-treeselect.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-treeselect.js",
+      "require": "./dist/vue3-treeselect.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vitejs/plugin-vue-jsx": "^2.0.0",
+    "easings-css": "^2.1.1",
+    "fuzzysearch": "^1.0.3",
+    "is-promise": "^4.0.0",
+    "less": "^4.1.3",
+    "lodash": "^4.17.21",
+    "material-colors": "^1.2.6",
+    "vite": "^3.0.1",
+    "vue": "^3.2.37",
+    "watch-size": "^2.0.0"
+  }
 }
