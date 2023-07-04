@@ -1,5 +1,5 @@
 {
-  "name": "@pragnesh/vue-treeselect",
+  "name": "@pragnesh87/vue-treeselect",
   "version": "1.0.0",
   "description": "Vue 3 treeselect",
   "repository": {
@@ -7,7 +7,18 @@
     "url": "git+https://github.com/pragneshgc/treeselect.git"
   },
   "keywords": [
-    "treeselect"
+    "vue",
+    "component",
+    "tree",
+    "treeview",
+    "select",
+    "dropdown",
+    "treeselect",
+    "multiselect",
+    "form",
+    "control",
+    "input",
+    "ui"
   ],
   "author": "pragnesh",
   "license": "MIT",
@@ -52,5 +63,8 @@
     "vite": "^3.0.1",
     "vue": "^3.2.37",
     "watch-size": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.2"
   }
 }
