@@ -46,8 +46,8 @@ This example shows how to integrate vue3-treeselect with your [Vue SFCs](https:/
 <script>
 // import the component
 import Treeselect from "vue3-treeselect";
-// import the styles
-import "vue3-treeselect/dist/vue3-treeselect.css";
+// import the styles  
+import 'vue3-treeselect/style.css';
 
 export default {
   // register the component
@@ -87,62 +87,6 @@ export default {
 </script>
 ```
 
-If you just don't want to use webpack or any other bundlers, you can simply include the standalone UMD build in your page. In this way, make sure Vue as a dependency is included before vue3-treeselect.
-
-```html
-<html>
-  <head>
-    <!-- include Vue 2.x -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
-    <!-- include vue-treeselect & its styles. you can change the version tag to better suit your needs. -->
-    <script src="https://cdn.jsdelivr.net/npm/vue3-treeselect@^0.1.0/dist/vue3-treeselect.umd.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/vue3-treeselect@^0.1.0/dist/vue3-treeselect.min.css"
-    />
-  </head>
-  <body>
-    <div id="app">
-      <treeselect v-model="value" :multiple="true" :options="options" />
-    </div>
-  </body>
-  <script>
-    createApp({
-      data: {
-        // define the default value
-        value: null,
-        // define options
-        options: [
-          {
-            id: "a",
-            label: "a",
-            children: [
-              {
-                id: "aa",
-                label: "aa",
-              },
-              {
-                id: "ab",
-                label: "ab",
-              },
-            ],
-          },
-          {
-            id: "b",
-            label: "b",
-          },
-          {
-            id: "c",
-            label: "c",
-          },
-        ],
-      },
-    })
-      .component("treeselect", VueTreeselect.Treeselect)
-      .mount("#app");
-  </script>
-</html>
-```
 
 ### Browser Compatibility
 
