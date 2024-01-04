@@ -27,8 +27,6 @@ _Requires Vue 3.0+_
 
 ### Getting Started
 
-It's recommended to install vue3-treeselect via npm, and build your app using a bundler like [webpack](https://webpack.js.org/).
-
 ```bash
 npm install --save @pragnesh87/vue-treeselect
 ```
@@ -46,8 +44,8 @@ This example shows how to integrate vue3-treeselect with your [Vue SFCs](https:/
 <script>
 // import the component
 import Treeselect from "vue3-treeselect";
-// import the styles  
-import 'vue3-treeselect/style.css';
+// import the styles
+import "vue3-treeselect/style.css";
 
 export default {
   // register the component
@@ -87,6 +85,66 @@ export default {
 </script>
 ```
 
+Vue 3 Example
+
+```
+<template>
+    <treeselect class="vue-treeselect-compact" :open-on-click="true" :clearable="false" :open-on-focus="true"
+        :open-on-hover="true" :searchable="false" :disable-branch-nodes="true" placeholder="Loading..." :show-count="true"
+        :default-expand-level="1" :options="status" :scrollPositionOnCenter="true" :append-to-body="false"
+        v-model="currentStatus">
+        <template v-slot:valueLabel="{ node }">
+            {{ node.raw.customLabel ? node.raw.customLabel : node.raw.label }}
+        </template>
+        <template v-slot:optionLabel="{ node, shouldShowCount, count, labelClassName, countClassName }"
+            :class="labelClassName">
+            {{ node.label }}
+            <span v-if="shouldShowCount" :class="countClassName">({{ count }})</span>
+        </template>
+    </treeselect>
+</template>
+<style>
+@import '@pragnesh87/vue-treeselect/style.css';
+</style>
+<script setup>
+import { ref } from 'vue';
+import Treeselect from '@pragnesh87/vue-treeselect';
+const currentStatus = ref('31');
+const status = [
+    {
+        "id": "1",
+        "label": "NEW"
+    },
+    {
+        "id": "2",
+        "label": "APPROVED"
+    },
+    {
+        "id": "3",
+        "label": "ONHOLD",
+        "isDefaultExpanded": false,
+        "children": [
+            {
+                "id": "31",
+                "label": "Awaiting stock",
+                "customLabel": "ONHOLD - Awaiting stock"
+            },
+            {
+                "id": "32",
+                "label": "Awaiting customer details",
+                "customLabel": "ONHOLD - Awaiting customer details"
+            },
+        ]
+    },
+    {
+        "id": "4",
+        "label": "REJECTED"
+    },
+
+];
+</script>
+
+```
 
 ### Browser Compatibility
 
